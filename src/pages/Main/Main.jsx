@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import NewsBanner from '../../components/NewsBanner/Newsbanner';
+import NewsBanner from '../../components/NewsBanner/NewsBanner';
 import styles  from './styles.module.css'
 import { getNews } from '../../api/apiNews';
 import NewsList from '../../components/NewsList/NewsList';
