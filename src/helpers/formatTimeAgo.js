@@ -25,9 +25,8 @@ export const formatTimeAgo = (dateString) => {
                     return `${intervalCount} ${intervalCount === 1 ? 'минута' : intervalCount < 5 ? 'минуты' : 'минут'} назад`;
             }
         }
-            return `${intervalCount} секунд назад`;
     }
-
+            return `${countIntervalSeconds} секунд назад`;
 }
 
 
