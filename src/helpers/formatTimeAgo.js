@@ -26,9 +26,6 @@ export const formatTimeAgo = (dateString) => {
             }
         }
     }
-            return `${countIntervalSeconds} секунд назад`;
+    return `${countIntervalSeconds} секунд назад`;
 }
-
-
-
 
