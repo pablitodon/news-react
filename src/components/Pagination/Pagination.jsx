@@ -27,10 +27,8 @@ const Pagination = ({
                             className={styles.pageNumber}
                             key={index}
                             disabled={index + 1 === currentPage}
-
                         >
                             {index + 1}
-
                         </button>)
                 })}
             </div>
