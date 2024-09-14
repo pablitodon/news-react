@@ -15,6 +15,7 @@ const Main = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [categories, setCategories] = useState([]);
     const [selectedCategories, setSelectedCategories] = useState('All');
+    const [keyWords,setKeyWords] = useState('');
     
 
     const totalPages = 10;
@@ -27,7 +28,8 @@ const Main = () => {
             const response = await getNews({
                 page_number: currentPage,
                 page_size: pageSize,
-                category: selectedCategories === 'All' ? null : selectedCategories
+                category: selectedCategories === 'All' ? null : selectedCategories,
+                keywords:keyWords
             });
             setNews(response.news)
             setIsLoading(false)
