@@ -2,14 +2,12 @@
 import styles from './styles.module.css'
 
 
-const Skeleton = ({ count,type}) => {
-    console.log(Array[count]);
-    
+const Skeleton = ({ count, type,direction='column'}) => {
     return (
         <>
             {
                 count > 1 ? (
-                    <ul className={styles.list}>
+                    <ul className={direction === 'column'? styles.columnList : styles.rowList}>
                         {[...Array(count)].map((_, index) => (
                             <li
                                 key={index}
