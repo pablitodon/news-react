@@ -11,5 +11,5 @@ const NewsList = ({ news }) => {
         </div>
     );
 };
-const NewsListWithSkeleton = withSkeleton(NewsList,'item',10)
+const NewsListWithSkeleton = withSkeleton(NewsList,'item',10,'column')
 export default NewsListWithSkeleton;
