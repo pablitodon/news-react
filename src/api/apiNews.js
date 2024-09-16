@@ -20,6 +20,7 @@ export const getNews = async ({
         keywords,
       },
     });
+    console.log(response.data);
     return response.data;
   } catch (error) {
     console.log(error);
@@ -34,9 +35,10 @@ export const getСategories = async () => {
       },
     });
     console.log(response.data);
-
     return response.data;
   } catch (error) {
     console.log(error);
   }
 };
+
+
