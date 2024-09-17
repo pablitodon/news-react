@@ -14,5 +14,5 @@ const BannersList = ({ banners }) => {
         </ul>
     );
 };
-const NewsBannerWithSkeleton = withSkeleton(BannersList, 'banner', 20, 'row')
+const NewsBannerWithSkeleton = withSkeleton(BannersList, 'banner', 9, 'row')
 export default NewsBannerWithSkeleton;
