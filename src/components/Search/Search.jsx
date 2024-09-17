@@ -3,7 +3,6 @@ import styles from './styles.module.css'
 
 
 const Search = ({ keywords, setKeyWords}) => {
-console.log(keywords);
 
     return (
         <div className={styles.search} >
