@@ -1,9 +1,14 @@
 /* eslint-disable react/prop-types */
 import { formatTimeAgo } from "../../helpers/formatTimeAgo";
+import { INews } from "../../interfaces";
 import styles from './styles.module.css'
 
 
-const NewsItem = ({ item }) => {
+interface Props{
+    item:INews
+}
+
+const NewsItem = ({ item }:Props) => {
     return (
         <li className={styles.item}>
             <div className={styles.wrapper}

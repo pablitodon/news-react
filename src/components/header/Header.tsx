@@ -1,7 +1,8 @@
+import React from "react";
 import { formatDate } from "../../helpers/formatDate";
 import styles  from './styles.module.css'
 
- 
+   
 const Header = () => {
     return (
         <header className={styles.header}>
@@ -11,4 +12,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default Header; 

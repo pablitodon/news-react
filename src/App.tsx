@@ -1,3 +1,4 @@
+import React from "react"
 import Header from "./components/header/Header"
 import Main from "./pages/Main/Main"
 
@@ -5,9 +6,9 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header/>
       <div className='container'>
-      <Main />
+      <Main/>
       </div>
     </>
   )

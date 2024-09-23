@@ -1,9 +1,12 @@
 /* eslint-disable react/prop-types */
 import styles from './styles.module.css'
 
+interface Props {
+    keywords:string;
+    setKeyWords:(keywords:string) => void; 
+}
 
-const Search = ({ keywords, setKeyWords}) => {
-
+const Search = ({ keywords, setKeyWords}:Props) => {
     return (
         <div className={styles.search} >
             <input 
