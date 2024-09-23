@@ -1,11 +1,15 @@
 /* eslint-disable react/prop-types */
+import { INews } from "../../interfaces";
 import withSkeleton from "../../helpers/HOCs/withSkeleton";
 import NewsBanner from "../NewsBanner/NewsBanner";
 import styles from './styles.module.css'
 
+interface Props{
+    banners?:INews[] | null;
+}
 
-const BannersList = ({ banners }) => {
-
+const BannersList = ({ banners }:Props) => {
+    
     return (
         <ul className={styles.banners}>
             {banners?.map(banner => {
@@ -14,5 +18,5 @@ const BannersList = ({ banners }) => {
         </ul>
     );
 };
-const NewsBannerWithSkeleton = withSkeleton(BannersList, 'banner', 9, 'row')
+const NewsBannerWithSkeleton = withSkeleton<Props>(BannersList, 'banner', 10, 'row')
 export default NewsBannerWithSkeleton;

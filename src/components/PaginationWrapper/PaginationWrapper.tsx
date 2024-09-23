@@ -1,8 +1,15 @@
 /* eslint-disable react/prop-types */
+import { IPaginationProps } from "../../interfaces";
 import Pagination from "../Pagination/Pagination";
-
  
-const PaginationWrapper = ({top,bottom,children, ...paginationsProps}) => {
+interface Props {
+    top?:boolean;
+    bottom?:boolean;
+    children:React.ReactNode;
+};
+ 
+const PaginationWrapper = ({top,bottom,children, ...paginationsProps}:Props & IPaginationProps) => {
+    
     return (
         <>
          {top && <Pagination {...paginationsProps}/>}

@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
+import { IPaginationProps } from '../../interfaces';
 import styles from './styles.module.css'
 
 
@@ -9,7 +10,7 @@ const Pagination = ({
     handlePrevPage,
     handlePageClick,
     currentPage,
-}) => {
+}:IPaginationProps) => {
     return (
         <div className={styles.pagination}>
             <button
