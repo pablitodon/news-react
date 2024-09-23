@@ -1,5 +1,7 @@
-export const formatTimeAgo = (dateString) => {
-    const intervals = {
+import { Intervals } from "../interfaces";
+
+export const formatTimeAgo = (dateString:string) => {
+    const intervals:Intervals = {
         year: 31536000,
         month: 2592000,
         day: 86400,
@@ -7,10 +9,10 @@ export const formatTimeAgo = (dateString) => {
         minute: 60,
     };
   
-    const countIntervalSeconds = Math.floor((new Date() - new Date(dateString)) / 1000);
+    const countIntervalSeconds:number = Math.floor((new Date().getTime() - new Date(dateString).getTime()) / 1000);
   
     for (const [key, value] of Object.entries(intervals)) {
-        const intervalCount = Math.floor(countIntervalSeconds / value);
+        const intervalCount:number = Math.floor(countIntervalSeconds / value);
         if (intervalCount >= 1) {
             switch (key) {
                 case 'year':
