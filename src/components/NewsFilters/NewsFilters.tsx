@@ -10,19 +10,19 @@ import { useTheme } from '../context/ThemeContext';
 
 interface Props {
     filters: IFilters;
-    changeFilter: (key:string, value: string | number | null) => void;
+    changeFilter: (key: string, value: string | number | null) => void;
 }
 
 
 
-const NewsFilters = ({ filters, changeFilter}: Props) => {
-    const {isDark} = useTheme();
+const NewsFilters = ({ filters, changeFilter }: Props) => {
+    const { isDark } = useTheme();
     const { data: dataCategories } = useFetch<CategoriesApiResponse, null>(getCategories);
     return (
         <div className={styles.filters}>
             {
                 dataCategories &&
-                <Slider isDark= {isDark}>
+                <Slider isDark={isDark}>
                     <Categories
                         categories={dataCategories.categories}
                         setSelectedCategories={(category) => changeFilter('category', category)}
