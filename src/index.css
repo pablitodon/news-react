@@ -5,10 +5,32 @@
   text-decoration: none;
   box-sizing: border-box;
   font-family: 'Inter','sans-serif';
+  transition: background-color 0.3s ease, border-bottom 0.3s ease;
 }
 
 
 .container{
   padding: 24px;
   min-height: 188vh;
+}
+
+.app.dark .container {
+  background-color: #23272f;
+}
+
+.app.dark p,
+.app.dark h3,
+.app.dark h1 {
+  color: #f6f7f9;
+}
+
+
+.app.light .container {
+  background-color:white;
+}
+
+.app.light p,
+.app.light h3,
+.app.light h1 {
+  color:black
 }

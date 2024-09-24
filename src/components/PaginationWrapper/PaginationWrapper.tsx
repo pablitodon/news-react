@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { useTheme } from "../context/ThemeContext";
 import { IPaginationProps } from "../../interfaces";
 import Pagination from "../Pagination/Pagination";
  
@@ -8,8 +9,7 @@ interface Props {
     children:React.ReactNode;
 };
  
-const PaginationWrapper = ({top,bottom,children, ...paginationsProps}:Props & IPaginationProps) => {
-    
+const PaginationWrapper = ({top,bottom,children,...paginationsProps}:Props & IPaginationProps) => {
     return (
         <>
          {top && <Pagination {...paginationsProps}/>}
