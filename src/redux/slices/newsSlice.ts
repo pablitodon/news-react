@@ -22,9 +22,6 @@ export const newsSlice = createSlice({
   name: "news",
   initialState,
   reducers: {
-    // setNews: (state, action: PayloadAction<INews[]>) => {
-    //   state.news = action.payload;
-    // },
     getFilters: (
       state,
       action: PayloadAction<{ key: string; value: IFiltersActionValue }>
