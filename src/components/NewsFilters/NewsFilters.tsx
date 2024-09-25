@@ -1,23 +1,23 @@
 /* eslint-disable react/prop-types */
-import { CategoriesApiResponse, IFilters } from '../../interfaces';
-import { getCategories } from '../../api/apiNews';
-import { useFetch } from '../../helpers/hooks/useFetch';
+import { IFilters } from '../../interfaces';
 import Categories from '../Categories/Categories';
 import Search from '../Search/Search';
 import Slider from '../Slider/Slider';
 import styles from './styles.module.css'
 import { useTheme } from '../context/ThemeContext';
+import { useGetCategoriesQuery } from '../../services/newsApi';
+import { useAppDispatch } from '../../redux/store';
+import { getFilters } from '../../redux/slices/newsSlice';
 
 interface Props {
     filters: IFilters;
-    changeFilter: (key: string, value: string | number | null) => void;
 }
 
+const NewsFilters = ({ filters }: Props) => {
 
-
-const NewsFilters = ({ filters, changeFilter }: Props) => {
+    const dispatch = useAppDispatch();
     const { isDark } = useTheme();
-    const { data: dataCategories } = useFetch<CategoriesApiResponse, null>(getCategories);
+    const { data: dataCategories } = useGetCategoriesQuery(null)
     return (
         <div className={styles.filters}>
             {
@@ -25,12 +25,12 @@ const NewsFilters = ({ filters, changeFilter }: Props) => {
                 <Slider isDark={isDark}>
                     <Categories
                         categories={dataCategories.categories}
-                        setSelectedCategories={(category) => changeFilter('category', category)}
+                        setSelectedCategories={(category) => dispatch(getFilters({ key: 'category', value: category }))}
                         selectedCategories={filters.category}
                     />
                 </Slider>
             }
-            <Search keywords={filters.keywords} setKeyWords={(keywords) => changeFilter('keywords', keywords)} />
+            <Search keywords={filters.keywords} setKeyWords={(keywords) => dispatch(getFilters({ key: 'keywords', value: keywords }))} />
         </div>
     );
 };
