@@ -14,9 +14,7 @@ interface Props {
 }
 
 const NewsListWithPagination = ({ filters, news, isLoading }: Props) => {
-
     const { handleNextPage, handlePrevPage, handlePageClick } = usePaginationNews({ filters })
-
     return (
         <PaginationWrapper
             top
