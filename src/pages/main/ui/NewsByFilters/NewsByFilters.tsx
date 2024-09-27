@@ -11,9 +11,9 @@ import NewsListWithPagination from '../NewsListWithPagination/NewsListWithPagina
 const NewsByFilters = () => {
 
     const filters = useAppSelector((state) => state.news.filters);
-    const debouncedKeywords = useDebounce(filters.keywords, 1500)
-    const { data, isLoading } = useGetNewsQuery({ ...filters, keywords: debouncedKeywords })
-    const { data: dataCategories } = useGetCategoriesQuery(null)
+    const debouncedKeywords = useDebounce(filters.keywords, 1500);
+    const { data, isLoading } = useGetNewsQuery({ ...filters, keywords: debouncedKeywords });
+    const { data: dataCategories } = useGetCategoriesQuery(null);
 
     return (
         <section className={styles.section}>
