@@ -6,25 +6,28 @@ import Search from '@/features/search/ui/Search/Search';
 import Slider from '@/features/slider/ui/Slider/Slider';
 import { IFilters } from '@/shared/interfaces';
 import styles from './styles.module.css'
-import { useGetCategoriesQuery } from '@/entities/category/api/categoriesApi';
+
 import { getFilters } from '@/entities/news/model/newsSlice';
+import { CategoriesType } from '@/entities/category';
 
 interface Props {
     filters: IFilters;
+    dataCategories: CategoriesType[];
 }
 
-const NewsFilters = ({ filters }: Props) => {
+const NewsFilters = ({ filters, dataCategories }: Props) => {
+    console.log(dataCategories);
 
     const dispatch = useAppDispatch();
     const { isDark } = useTheme();
-    const { data: dataCategories } = useGetCategoriesQuery(null)
+
     return (
         <div className={styles.filters}>
             {
                 dataCategories &&
                 <Slider isDark={isDark}>
                     <Categories
-                        categories={dataCategories.categories}
+                        categories={dataCategories}
                         setSelectedCategories={(category) => dispatch(getFilters({ key: 'category', value: category }))}
                         selectedCategories={filters.category}
                     />
