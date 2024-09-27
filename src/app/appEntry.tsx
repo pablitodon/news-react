@@ -5,12 +5,14 @@ import { store } from "./appStore";
 import { ThemeProvider } from "./providers/ThemeProvider";
 import BaseLayout from "./layouts/BaseLayout";
 import '@/shared/index.css';
+import { RouterProvider } from "react-router-dom";
+import { appRouter } from "./appRouter";
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
         <Provider store={store}>
             <ThemeProvider>
-                <BaseLayout />
+                <RouterProvider router={appRouter} />
             </ThemeProvider>
         </Provider>
     </StrictMode>
