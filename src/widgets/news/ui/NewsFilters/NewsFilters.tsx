@@ -16,7 +16,6 @@ interface Props {
 }
 
 const NewsFilters = ({ filters, dataCategories }: Props) => {
-    console.log(dataCategories);
 
     const dispatch = useAppDispatch();
     const { isDark } = useTheme();
